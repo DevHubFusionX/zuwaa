@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "DM Sans", system-ui, -apple-system, sans-serif;
+
+  --color-jade-950: #032A1F;
+  --color-jade-900: #084B36;
+  --color-jade-800: #085B3F;
+  --color-jade-700: #06734D;
+  --color-jade-600: #08905D;
+  --color-jade-500: #14B173;
+  --color-jade-400: #38CD8C;
+  --color-jade-100: #D2F9E3;
+  --color-jade-50:  #ECFDF4;
+
+  --color-amber-400: #FBBF24;
+  --color-amber-600: #D97706;
+
+  --color-ink-950: #0E1412;
+  --color-grey-600: #52605B;
+  --color-grey-500: #6B7A75;
+  --color-grey-200: #E1E6E4;
+  --color-grey-100: #EFF2F1;
+  --color-grey-50:  #F7F9F8;
+
+  --color-canvas-dark: #0A0F0D;
+}
+
+:root {
+  font-family: var(--font-sans);
+  color: var(--color-ink-950);
+  background-color: var(--color-grey-50);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tabular numbers for financial amounts */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom Anchor-style scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f3;
+}
+::-webkit-scrollbar-thumb {
+  background: #085B3F;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #032A1F;
+}
+
+/* Glassmorphism helpers */
+.glass-header {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-header-dark {
+  background: rgba(3, 42, 31, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Subtle pulse glow for badge */
+@keyframes subtlePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.97); }
+}
+
+.animate-pulse-subtle {
+  animation: subtlePulse 3s infinite ease-in-out;
+}
+
+/* Continuous Marquee Ticker for Partner Logos */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
